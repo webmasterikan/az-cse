@@ -1,4 +1,4 @@
-Set-ExecutionPolicy remotesigned
+Set-ExecutionPolicy Unrestricted
 
 
 <#
