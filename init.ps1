@@ -17,6 +17,6 @@ $credential = New-Object System.Management.Automation.PSCredential("$env:COMPUTE
 
 $command = "ikanalm-setup.ps1"
 
-Enable-PSRemoting –force
+Enable-PSRemoting –Force
 Invoke-Command -FilePath $command -Credential $credential -ComputerName $env:COMPUTERNAME
 Disable-PSRemoting -Force
