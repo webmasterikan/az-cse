@@ -55,10 +55,9 @@ reg import C:\temp\edge.reg
 
 
 <#
---- TEST TEST TEST CSE
+--- TEST TEST TEST
 #>
-param ($myUsername, $myPassword)
-Set-Content -Path 'C:\temp\file.txt' -Value $myPassword
+Set-Content -Path 'C:\temp\file.txt' -Value 'test string'
 
 
 stop-process -Id $PID
