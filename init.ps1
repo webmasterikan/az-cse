@@ -5,8 +5,8 @@ Set-ExecutionPolicy Unrestricted
 --- Run ikanalm setup script as user not system account
 #>
 
-$myUsername = $Args[0]
-$Mypassword = $Args[1]
+$myUsername = ikanalmadmin
+$Mypassword = trAT2IreCGpt7suqzJVZ
 $machineName = $env:COMPUTERNAME
 
 $username = $env:COMPUTERNAME+'\'+$myUsername
