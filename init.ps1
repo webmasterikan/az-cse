@@ -5,15 +5,18 @@ Set-ExecutionPolicy Unrestricted
 --- Run ikanalm setup script as user not system account
 #>
 
-$username = $Args[0]
-$password = $Args[1]
+$myUsername = $Args[0]
+$Mypassword = $Args[1]
+
+$username = $env:COMPUTERNAME+'\'+$myUsername
 
 
 
-$password =  ConvertTo-SecureString $password -AsPlainText -Force
+$password =  ConvertTo-SecureString $Mypassword -AsPlainText -Force
 
 $credential = New-Object System.Management.Automation.PSCredential($username, $password)
 
+Write-Host "Just testing"
 
 $command = "https://raw.githubusercontent.com/webmasterikan/az-cse/main/ikanalm-setup.ps1"
 
