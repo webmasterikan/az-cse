@@ -15,13 +15,7 @@ $password = $Args[1]
 
 $credential = New-Object System.Management.Automation.PSCredential("$env:COMPUTERNAME\$username", $password)
 
-$command = "ikanalm-setup.ps1"
+$command = "https://raw.githubusercontent.com/webmasterikan/az-cse/main/ikanalm-setup.ps1"
 
-
-
-Write-Host "USERNAME"
-Write-Host $username
-Write-Host "ENVIRONMENT"
-Write-Host $env
 Invoke-Command -FilePath $command -Credential $credential -ComputerName $env:COMPUTERNAME
 
