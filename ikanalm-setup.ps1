@@ -6,4 +6,6 @@ Set-ExecutionPolicy Unrestricted
 #>
 Set-Content -Path 'C:\temp\file.txt' -Value 'CSE test string'
 
+stop-process -Id $PID
+
 
