@@ -20,7 +20,7 @@ $credential = New-Object System.Management.Automation.PSCredential($username, $p
 $command = "https://raw.githubusercontent.com/webmasterikan/az-cse/main/NOikanalm-setup.ps1"
 
 
-Enable-PSRemoting –force
+Enable-PSRemoting -Force
 Invoke-Command -FilePath $command -Credential $credential -ComputerName $machineName
 Disable-PSRemoting -Force
 
