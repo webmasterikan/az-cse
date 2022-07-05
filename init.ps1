@@ -17,7 +17,7 @@ $password =  ConvertTo-SecureString $Mypassword -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential($username, $password)
 
 
-$command = "https://raw.githubusercontent.com/webmasterikan/az-cse/main/ikanalm-setup.ps1"
+$command = "https://raw.githubusercontent.com/webmasterikan/az-cse/main/NOikanalm-setup.ps1"
 
 
 Enable-PSRemoting –force
