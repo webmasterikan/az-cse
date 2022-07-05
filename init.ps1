@@ -9,11 +9,11 @@ $username = $Args[0]
 $password = $Args[1]
 
 
-#$password =  ConvertTo-SecureString "[your admin account user password]" -AsPlainText -Force
-#$credential = New-Object System.Management.Automation.PSCredential("$env:COMPUTERNAME\[your admin account]", $password)
-#$command = $file = $PSScriptRoot + "\CustomScriptSQLPS.ps1"
 
-$credential = New-Object System.Management.Automation.PSCredential("$env:COMPUTERNAME\$username", $password)
+$password =  ConvertTo-SecureString $password -AsPlainText -Force
+
+$credential = New-Object System.Management.Automation.PSCredential($username, $password)
+
 
 $command = "https://raw.githubusercontent.com/webmasterikan/az-cse/main/ikanalm-setup.ps1"
 
