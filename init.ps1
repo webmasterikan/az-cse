@@ -8,6 +8,11 @@ $myUsername = $Args[0]
 $Mypassword = $Args[1]
 $machineName = $env:COMPUTERNAME
 
+Set-Content -Path 'C:\temp\arg0.txt' -Value $Args[0]
+Set-Content -Path 'C:\temp\arg1.txt' -Value $Args[1]
+Set-Content -Path 'C:\temp\arg2.txt' -Value $Args[2]
+Set-Content -Path 'C:\temp\arg3.txt' -Value $Args[3]
+
 $username = $env:COMPUTERNAME+'\'+$myUsername
 
 Set-Content -Path 'C:\temp\testfile.txt' -Value 'CSE test1'
@@ -23,8 +28,7 @@ $credential = New-Object System.Management.Automation.PSCredential($username, $p
 $command = "C:\temp\run-ikanalm-init.ps1"
 
 
-Enable-PSRemoting -Force
 Invoke-Command -FilePath $command -Credential $credential -ComputerName $machineName
-Disable-PSRemoting -Force
+
 
 stop-process -Id $PID
