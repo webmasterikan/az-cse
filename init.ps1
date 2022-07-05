@@ -1,5 +1,6 @@
 Set-ExecutionPolicy Unrestricted
 
+Write-Host "TESTing"
 
 <#
 --- Run ikanalm setup script as user not system account
@@ -16,9 +17,12 @@ $password =  ConvertTo-SecureString $Mypassword -AsPlainText -Force
 
 $credential = New-Object System.Management.Automation.PSCredential($username, $password)
 
-Write-Host "Just testing"
 
-$command = "https://raw.githubusercontent.com/webmasterikan/az-cse/main/ikanalm-setup.ps1"
 
+
+$command = "C:\temp\run-ikanalm-init.ps1"
+
+Enable-PSRemoting –force
 Invoke-Command -FilePath $command -Credential $credential -ComputerName $env:COMPUTERNAME
+Disable-PSRemoting -Force
 
