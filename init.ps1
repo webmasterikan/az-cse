@@ -33,4 +33,4 @@ $command = $PSScriptRoot + "\ikanalm-setup.ps1"
 Invoke-Command -FilePath $command -Credential $credential -ComputerName $machineName
 
 
-stop-process -Id $PID
+
