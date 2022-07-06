@@ -19,6 +19,10 @@ Set-Content -Path 'C:\temp\testfile.txt' -Value 'CSE test1'
 Set-Content -Path 'C:\temp\testuser.txt' -Value $username
 Set-Content -Path 'C:\temp\testpass.txt' -Value $Mypassword
 
+
+Set-Content -Path 'C:\temp\filevar.txt' -Value $file
+Set-Content -Path 'C:\temp\psscriptrootvar.txt' -Value $PSScriptRoot
+
 $password =  ConvertTo-SecureString $Mypassword -AsPlainText -Force
 
 $credential = New-Object System.Management.Automation.PSCredential($username, $password)
