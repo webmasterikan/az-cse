@@ -27,9 +27,7 @@ $password =  ConvertTo-SecureString $Mypassword -AsPlainText -Force
 
 $credential = New-Object System.Management.Automation.PSCredential($username, $password)
 
-
-#$command = "https://raw.githubusercontent.com/webmasterikan/az-cse/main/ikanalm-setup.ps1"
-$command = "C:\temp\run-ikanalm-init.ps1"
+$command = $PSScriptRoot + "\ikanalm-setup.ps1"
 
 
 Invoke-Command -FilePath $command -Credential $credential -ComputerName $machineName
