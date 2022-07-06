@@ -23,9 +23,14 @@ $password =  ConvertTo-SecureString $Mypassword -AsPlainText -Force
 
 $credential = New-Object System.Management.Automation.PSCredential($username, $password)
 
-Start-Process net -arg "start Tomcat9" -Credential $credential -Wait
-#Start-Process net -arg "start almsvr59" -Credential $credential 
-Start-Process net -arg "start almsvr59"
+
+
+Set-Service -Name "Tomcat9" -Credential $credential -Force -PassThru | Out-File "C:\temp\setservice.txt"
+Start-Service -Name "Tomcat9" -PassThru | Out-File "C:\temp\startservice.txt"
+
+
+
+
 
 
 
