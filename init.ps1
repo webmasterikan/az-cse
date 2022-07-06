@@ -30,7 +30,7 @@ $credential = New-Object System.Management.Automation.PSCredential($username, $p
 $command = $PSScriptRoot + "\ikanalm-setup.ps1"
 
 
-Invoke-Command -FilePath $command -Credential $credential -ComputerName $machineName
+Invoke-Command -FilePath $command -Credential $credential -ComputerName $machineName -ArgumentList $credential
 
 
 
