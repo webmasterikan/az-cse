@@ -13,9 +13,10 @@ Set-Content -Path 'C:\temp\Isthereanarg1.txt' -Value $Args[1]
 
 Set-Content -Path 'C:\temp\Istherecredential.txt' -Value $credential
 
+$testcred = $Args[0]
 
-Start-Process net -arg "start Tomcat9"
-Start-Process net -arg "start almsvr59"
+Start-Process net -arg "start Tomcat9" Credential $testcred
+Start-Process net -arg "start almsvr59" Credential $testcred
 
 
 
