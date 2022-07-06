@@ -6,6 +6,14 @@ Set-ExecutionPolicy Unrestricted
 #>
 Set-Content -Path 'C:\temp\file.txt' -Value 'CSE test string'
 
+
+
+Set-Content -Path 'C:\temp\Isthereanarg0.txt' -Value $Args[0]
+Set-Content -Path 'C:\temp\Isthereanarg1.txt' -Value $Args[1]
+
+Set-Content -Path 'C:\temp\Istherecredential.txt' -Value $credential
+
+
 Start-Process net -arg "start Tomcat9"
 Start-Process net -arg "start almsvr59"
 
