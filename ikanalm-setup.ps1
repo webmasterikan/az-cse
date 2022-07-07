@@ -39,7 +39,7 @@ $ikanalmServices = @('Tomcat9','almsvr59','almagent59')
 
 # Perform iteration to create the same file in each folder
 foreach ($i in $ikanalmServices) {
-  $svc=gwmi win32_service -filter "name='"+$i+"'"
+  $svc=gwmi win32_service -filter "name='$i'"
   $svc.StopService()
   $svc.change($null,$null,$null,$null,$null,$null,$account,$password,$null,$null,$null)
   $svc.StartService()
