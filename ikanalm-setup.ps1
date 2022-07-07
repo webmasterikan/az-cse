@@ -32,15 +32,18 @@ $testusername = '.\'+$myUsername
 
 $account = '.\'+$myUsername
 $password = $Mypassword
-$service = "name='Tomcat9'"
+#$service = "name='Tomcat9'"
 
-$svc=gwmi win32_service -filter $service
-$svc.StopService()
-$svc.change($null,$null,$null,$null,$null,$null,$account,$password,$null,$null,$null)
-$svc.StartService()
+# Create an array of folders
+$ikanalmServices = @('Tomcat9','almsvr59','almagent59')
 
-
-#Start-Service -Name "Tomcat9" -PassThru | Out-File "C:\temp\startservice.txt"
+# Perform iteration to create the same file in each folder
+foreach ($i in $ikanalmServices) {
+  $svc=gwmi win32_service -filter "name='"+$i+"'"
+  $svc.StopService()
+  $svc.change($null,$null,$null,$null,$null,$null,$account,$password,$null,$null,$null)
+  $svc.StartService()
+}
 
 
 
