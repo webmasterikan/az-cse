@@ -29,10 +29,18 @@ $credential = New-Object System.Management.Automation.PSCredential($username, $p
 
 $testusername = '.\'+$myUsername
 
-$service = gwmi win32_service -computer [computername] -filter "name='Tomcat9'"
-$service.change($null,$null,$null,$null,$null,$null,$testusername,$Mypassword)
 
-Start-Service -Name "Tomcat9" -PassThru | Out-File "C:\temp\startservice.txt"
+$account = '.\'+$myUsername
+$password = $Mypassword
+$service = "name='Tomcat9'"
+
+$svc=gwmi win32_service -filter $service
+$svc.StopService()
+$svc.change($null,$null,$null,$null,$null,$null,$account,$password,$null,$null,$null)
+$svc.StartService()
+
+
+#Start-Service -Name "Tomcat9" -PassThru | Out-File "C:\temp\startservice.txt"
 
 
 
