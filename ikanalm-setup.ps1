@@ -63,9 +63,3 @@ wsl --import $distro $location "C:\temp\Ubuntu-fs.tar"
 --- Disable the first run experience in Edge
 #>
 reg import C:\temp\edge.reg
-
-
-<#
---- TEST TEST TEST
-#>
-Set-Content -Path 'C:\temp\file.txt' -Value 'V8 test string'
