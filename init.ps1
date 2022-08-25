@@ -6,6 +6,7 @@ Set-ExecutionPolicy Unrestricted
 # Get arguments from ARM template
 $myUsername = $Args[0]
 $Mypassword = $Args[1]
+$MyResourceGroupName = $Args[2]
 
 # Set a machine name var ($env is a redefined var)
 $machineName = $env:COMPUTERNAME
@@ -20,4 +21,4 @@ $command = $PSScriptRoot + "\ikanalm-setup.ps1"
 
 # Enable-PSRemoting is not necessary since we're targeting a Windows Server
 # Passing arguments to the called script to enable credential object creation
-Invoke-Command -FilePath $command -Credential $credential -ComputerName $machineName -ArgumentList $myUsername, $Mypassword
+Invoke-Command -FilePath $command -Credential $credential -ComputerName $machineName -ArgumentList $myUsername, $Mypassword, $MyResourceGroupName
