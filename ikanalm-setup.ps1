@@ -22,7 +22,7 @@ foreach ($i in $ikanalmServices) {
 --- Set ResourceGroup name
 #>
 $MyResourceGroupName = $Args[2]
-Add-Content -Path C:\temp\rgn.txt -Value $MyResourceGroupName
+Add-Content -Path "C:\temp\rgn.txt" -Value $MyResourceGroupName
 
 
 <#
