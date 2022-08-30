@@ -28,7 +28,7 @@ Add-Content -Path "C:\temp\rgn.txt" -Value $MyResourceGroupName
 <#
 --- Install license
 #>
-Start-Process -FilePath "almlt.bat" -WorkingDirectory "C:\ikan\IKAN_ALM_5.9_console\deployment\config" -ArgumentList "install C:\temp\alm_license.lic" -WindowStyle "Hidden" -Wait
+Start-Process -FilePath "almlt.bat" -WorkingDirectory "C:\alm\system\config" -ArgumentList "install C:\temp\alm_license.lic" -WindowStyle "Hidden" -Wait
 
 
 <#
