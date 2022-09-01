@@ -42,7 +42,7 @@ $ShortCut.TargetPath = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge
 $ShortCut.Arguments = "http://localhost:8080/alm/"
 $ShortCut.WorkingDirectory = "C:\Program Files (x86)\Microsoft\Edge\Application\"
 $ShortCut.WindowStyle = 1
-$ShortCut.IconLocation = "C:\webservers\apache-tomcat-9.0.58\webapps\alm\images\run-ikanalm.ico, 0"
+$ShortCut.IconLocation = "C:\webservers\apache-tomcat-9.0.60\webapps\alm\images\run-ikanalm.ico, 0"
 
 $ShortCut.Save()
 
