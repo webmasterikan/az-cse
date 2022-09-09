@@ -32,28 +32,46 @@ Start-Process -FilePath "almlt.bat" -WorkingDirectory "C:\alm\system\config" -Ar
 
 
 <#
---- Create shortcut
+--- Add Git user
+#>
+git config --global user.email "gituser@localhost"
+git config --global user.name "gituser"
+
+
+<#
+--- Create shortcuts
 #>
 $Shell = New-Object -ComObject ("WScript.Shell")
 
 $ShortCut = $Shell.CreateShortcut("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\IKAN ALM.lnk")
-
 $ShortCut.TargetPath = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 $ShortCut.Arguments = "http://localhost:8080/alm/"
 $ShortCut.WorkingDirectory = "C:\Program Files (x86)\Microsoft\Edge\Application\"
 $ShortCut.WindowStyle = 1
 $ShortCut.IconLocation = "C:\webservers\apache-tomcat-9.0.60\webapps\alm\images\run-ikanalm.ico, 0"
-
 $ShortCut.Save()
+
+$ShortCutVSCode = $Shell.CreateShortcut("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio Code.lnk")
+$ShortCutVSCode.TargetPath = "C:\ide\Microsoft VS Code\Code.exe"
+$ShortCutVSCode.Arguments = "C:\ikan\workspace\demozos\srb"
+$ShortCutVSCode.WorkingDirectory = "C:\ide\Microsoft VS Code"
+$ShortCutVSCode.WindowStyle = 1
+$ShortCutVSCode.IconLocation = "C:\ide\Microsoft VS Code\Code.exe, 0"
+$ShortCutVSCode.Save()
 
 
 <#
 --- Copy shortcut to desktop
 #>
-$command = @'
+$commandIa = @'
 cmd.exe /C copy "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\IKAN ALM.lnk" %USERPROFILE%\Desktop
 '@
-Invoke-Expression -Command:$command
+Invoke-Expression -Command:$commandIa
+
+$commandVS = @'
+cmd.exe /C copy "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio Code.lnk" %USERPROFILE%\Desktop
+'@
+Invoke-Expression -Command:$commandVS
 
 
 <#
