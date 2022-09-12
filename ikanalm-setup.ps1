@@ -53,7 +53,7 @@ $ShortCut.Save()
 
 $ShortCutVSCode = $Shell.CreateShortcut("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio Code.lnk")
 $ShortCutVSCode.TargetPath = "C:\ide\Microsoft VS Code\Code.exe"
-$ShortCutVSCode.Arguments = "C:\ikan\workspace\demozos\srb"
+$ShortCutVSCode.Arguments = "C:\ikan\workspace\demozos"
 $ShortCutVSCode.WorkingDirectory = "C:\ide\Microsoft VS Code"
 $ShortCutVSCode.WindowStyle = 1
 $ShortCutVSCode.IconLocation = "C:\ide\Microsoft VS Code\Code.exe, 0"
